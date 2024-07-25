@@ -11,12 +11,15 @@ class Excel:
         """
         """
 
-    def inserindo_dados_planilha (self, arg_dictPaisesInfo:list):
+    def inserindo_dados_planilha (self, arg_listPaisesInfo:list):
         """
         """
 
-        var_dtTodosDestinos = pd.DataFrame(arg_dictPaisesInfo)
-        var_dtTodosDestinos.to_excel("Passagens.xlsx", index=False, header=True)
+        var_dtTodosDestinos = pd.DataFrame(arg_listPaisesInfo)
+        var_dtTodosDestinos.to_excel("Passagens.xlsx", index=False, header=True, sheet_name="Todos")
 
-        sorted_dtInfo = dict(sorted(arg_dictPaisesInfo.items(), key=lambda item: item[1])[:10])
+        sorted_dtInfo = list(sorted(arg_listPaisesInfo, key=lambda item: item[1])[:10])
+
+        var_dtDestinosBaratos = pd.DataFrame(sorted_dtInfo)
+        var_dtDestinosBaratos.to_excel("Passagens.xlsx", index=False, header=True, sheet_name="Baratos")
             

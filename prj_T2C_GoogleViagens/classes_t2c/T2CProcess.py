@@ -68,6 +68,6 @@ class T2CProcess:
         Este é apenas um exemplo e o print() é apenas um espaço reservado.
         """
 
-        var_dictPassagens = self.var_clssChrome.extract_prices(arg_strQueueItem=str(arg_tplQueueItem[7]))
+        var_listPassagens = self.var_clssChrome.extract_prices(arg_strQueueItem=str(arg_tplQueueItem[7]))
 
-        self.var_clssExcel.inserindo_dados_planilha(arg_dictPaisesInfo=var_dictPassagens)
+        self.var_clssExcel.inserindo_dados_planilha(arg_listPaisesInfo=var_listPassagens)

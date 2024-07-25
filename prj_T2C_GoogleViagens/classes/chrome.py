@@ -87,6 +87,6 @@ class Chrome:
         var_dictInfo = self.var_botWebbot.find_element(r"//*[@id='yDmH0d']/c-wiz[2]/div/div[2]/div/c-wiz/div[2]/div/div/div[1]/main/div/div[2]/div/ol", By.XPATH)
 
         # Armazenando valores das passagens
-        var_dictMatches = re.findall(r"(?:([A-ú \-]+)[\nR\$]+ ([0-9.]{5,6})[\n[0-9 A-ú]+)", var_dictInfo.text)
+        var_listMatches = re.findall(r"(?:([A-ú \-]+)[\nR\$]+ ([0-9.]{5,6})[\n[0-9 A-ú]+)", var_dictInfo.text)
 
-        return var_dictMatches
+        return var_listMatches
